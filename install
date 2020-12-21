@@ -1,0 +1,11 @@
+#!/bin/rc
+
+if(~ $#objtypes 0){
+	objtypes=(amd64 arm 386)
+}
+
+echo 'installing irc7 for '^$"objtypes
+for(objtype in $objtypes){
+	mk install
+}
+mk clean
